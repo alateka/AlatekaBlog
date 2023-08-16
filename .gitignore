@@ -1,0 +1,6 @@
+app/Database/AlatekaBlog.db
+.env
+vendor/
+writable/debugbar/
+writable/logs/
+.vscode/
