@@ -1,9 +1,9 @@
 {
-    "name": "codeigniter4/codeigniter4",
+    "name": "alateka/alateka-blog",
     "type": "project",
-    "description": "The CodeIgniter framework v4",
-    "homepage": "https://codeigniter.com",
-    "license": "MIT",
+    "description": "The Alateka's blog",
+    "homepage": "https://alateka.es",
+    "license": "GPL3",
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-intl": "*",
