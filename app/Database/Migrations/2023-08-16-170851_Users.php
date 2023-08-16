@@ -14,7 +14,7 @@ class Users extends Migration
         'constraint'     => 11,
         'auto_increment' => true
       ],
-      'name' => [
+      'username' => [
         'type'           => 'TEXT',
         'constraint'     => 50
       ],
