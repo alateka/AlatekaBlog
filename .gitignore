@@ -5,3 +5,5 @@ writable/debugbar/
 writable/logs/
 .vscode/
 tailwindcss-linux-x64
+public/css/app.css
+composer.lock

@@ -3,7 +3,29 @@
 @tailwind utilities;
 
 @layer components {
-  .nav {
-    @apply text-green-500 bg-gray-200;
+
+  /* NAVBAR */
+  .navbar {
+    @apply bg-gray-100 text-gray-800 rounded-xl m-3;
   }
+  .navbar_dark {
+    @apply bg-slate-700 text-gray-200;
+  }
+
+  /* FOOTER */
+  .footer {
+    @apply bg-gray-100 text-gray-700;
+  }
+  .footer_dark {
+    @apply bg-slate-700 text-gray-200;
+  }
+
+  /* BLOG CONTAINER */
+  .blog_container {
+    @apply bg-gray-100 text-gray-700;
+  }
+  .blog_container_dark {
+    @apply bg-slate-700 text-gray-200;
+  }
+
 }
