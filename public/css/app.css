@@ -571,8 +571,6 @@ video {
 /* NAVBAR */
 
 .navbar {
-  margin: 0.75rem;
-  border-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -613,6 +611,10 @@ video {
   margin: 0.25rem;
 }
 
+.m-3 {
+  margin: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -631,6 +633,14 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .border {

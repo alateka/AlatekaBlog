@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 <header>
-  <nav class="navbar dark:navbar_dark flex justify-between">
+  <nav class="navbar dark:navbar_dark flex justify-between rounded-xl m-3">
 
     <!-- LOGO -->
     <div>
@@ -12,8 +12,9 @@
     </div>
 
     <!-- nav links -->
-    <div>
-      <span>Home</span>
+    <div class="flex">
+      <span><?= lang('Navbar.home') ?></span>
+      <span><?= lang('Navbar.categories') ?></span>
     </div>
     
     <!-- Profile info -->

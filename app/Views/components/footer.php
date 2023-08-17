@@ -1,15 +1,16 @@
 <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
-<footer class="footer dark:footer_dark">
+<footer class="footer dark:footer_dark flex justify-between rounded-xl m-3">
 
+    <!-- INFO -->
     <div>
-      <p>Page rendered in {elapsed_time} seconds</p>
-      <p>Environment: <?= ENVIRONMENT ?></p>
+      <span> &copy; <?= date('Y') ?> - </span>
+      <span> <?= lang('Footer.description') ?> </span>
+      <p> <?= lang('Footer.license') ?> </p>
     </div>
 
+    <!-- CMS VERSION -->
     <div>
-      <p>&copy; <?= date('Y') ?> AlatekaBlog is CMS project & open source</p>
-      <p>Released under the GPL3</p>
-      <p>Hosted on OVHcloud</p>
+      <span> <?= $cmsCurrentVersion ?> </span>
     </div>
 
 </footer>
