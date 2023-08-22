@@ -29,8 +29,24 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'HomeController::index');
-$routes->get('/{locale}', 'HomeController::index');
+
+// DEFAULT REDIRECT
+$routes->addRedirect('/', 'index.php/en');
+
+// HOME
+$routes->get('/{locale}', 'BlogController', [
+  'as' => 'home'
+]);
+
+// DASHBOARD
+$routes->get('/{locale}/dashboard', 'DashboardController', [
+  'as' => 'dashboard'
+]);
+
+// LOGIN
+$routes->get('/{locale}/login', 'LoginController', [
+  'as' => 'login'
+]);
 
 /*
  * --------------------------------------------------------------------

@@ -34,6 +34,11 @@ class Post extends Migration
         'constraint'     => 11,
         'null'           => false
       ],
+      'category' => [
+        'type'           => 'INT',
+        'constraint'     => 11,
+        'null'           => false
+      ],
       'updated_at' => [
         'type'           => 'DATETIME',
         'constraint'     => 11,

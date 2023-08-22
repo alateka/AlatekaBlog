@@ -1,7 +1,26 @@
-<?= $this->extend('components/base') ?>
+<?= $this->extend('layouts/base') ?>
 
 <?= $this->section('content') ?>
-    <div class="blog_container dark:blog_container_dark">
-      <span>hola</span>
+  <div>
+
+    <div class="text-center mb-7">
+      <span class="text-5xl font-bold text-gray-700 dark:text-gray-100">Alateka's Blog</span>
     </div>
+
+    <!-- Show all posts from back-end -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-9 lg:gap-16 lg:p-7">
+    <?php foreach ($posts as $post): ?>
+
+      <!-- POST -->
+      <div class="container_base p-3">
+        <img class="rounded-xl" src="<?= $post['image_url'] ?>" alt="Post image">
+        <div class=" border-t border-gray-300 dark:border-gray-700 mt-5 mb-3"></div>
+        <p class="font-bold text-lg"> <?= $post['title'] ?> </p>
+        <p> <?= substr($post['description'], 0, 99) ?> </p>
+      </div>
+
+    <?php endforeach ?>
+    </div>
+
+  </div>
 <?= $this->endSection() ?>

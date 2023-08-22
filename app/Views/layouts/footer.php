@@ -1,5 +1,5 @@
 <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
-<footer class="footer dark:footer_dark flex justify-between rounded-xl m-3">
+<footer class="container_base flex justify-between m-3 p-3">
 
     <!-- INFO -->
     <div>
@@ -10,7 +10,7 @@
 
     <!-- CMS VERSION -->
     <div>
-      <span> <?= $cmsCurrentVersion ?> </span>
+      <span> <?= $globalData['cmsCurrentVersion'] ?> </span>
     </div>
 
 </footer>

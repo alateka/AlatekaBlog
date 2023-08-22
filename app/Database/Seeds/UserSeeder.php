@@ -3,7 +3,7 @@
 namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
-use App\Models\Base\UserModel;
+use App\Models\UserModel;
 use Faker\Factory;
 
 class UserSeeder extends Seeder
@@ -19,7 +19,6 @@ class UserSeeder extends Seeder
       'name'      => $faker->name('male'),
       'last_name' => $faker->lastName()
     ];
-    
     $factory->insert($data);
   }
 }

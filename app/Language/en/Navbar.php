@@ -5,6 +5,8 @@
  *
  */
 return [
-  'home' => 'Home',
-  'categories' => 'Categories'
+  'home'        => 'Home',
+  'categories'  => 'Categories',
+  'profile'     => 'Profile',
+  'development' => 'Development'
 ];

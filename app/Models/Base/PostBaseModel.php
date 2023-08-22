@@ -4,16 +4,16 @@ namespace App\Models\Base;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class PostBaseModel extends Model
 {
   protected $DBGroup          = 'default';
-  protected $table            = 'users';
+  protected $table            = 'posts';
   protected $primaryKey       = 'id';
   protected $useAutoIncrement = true;
   protected $returnType       = 'array';
   protected $useSoftDeletes   = false;
   protected $protectFields    = true;
-  protected $allowedFields    = ['username', 'name', 'last_name', 'email', 'profile_image_url'];
+  protected $allowedFields    = ['title', 'description', 'image_url', 'user_id', 'category'];
 
   // Dates
   protected $useTimestamps = true;

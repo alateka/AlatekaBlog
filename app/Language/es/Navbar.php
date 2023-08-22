@@ -6,5 +6,7 @@
  */
 return [
   'home' => 'Inicio',
-  'categories' => 'Categorías'
+  'categories' => 'Categorías',
+  'profile' => 'Perfil',
+  'development' => 'Desarrollo'
 ];
