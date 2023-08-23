@@ -29,6 +29,11 @@ class Users extends Migration
         'constraint'     => 50,
         'null'           => true
       ],
+      'password' => [
+        'type'           => 'TEXT',
+        'constraint'     => 100,
+        'null'           => false
+      ],
       'email' => [
         'type'           => 'TEXT',
         'constraint'     => 100,

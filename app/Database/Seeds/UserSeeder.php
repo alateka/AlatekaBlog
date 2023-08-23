@@ -14,10 +14,11 @@ class UserSeeder extends Seeder
     $faker = Factory::create();
 
     $data = [
-      'username'  => 'alateka',
-      'email'     => 'alateka@email.es',
+      'username'  => 'admin',
+      'email'     => 'admin@email.es',
       'name'      => $faker->name('male'),
-      'last_name' => $faker->lastName()
+      'last_name' => $faker->lastName(),
+      'password'  => password_hash('admin', PASSWORD_BCRYPT)
     ];
     $factory->insert($data);
   }

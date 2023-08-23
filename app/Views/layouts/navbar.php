@@ -6,15 +6,13 @@
 
         <!-- LOGO -->
         <div>
-          <img
-            class="w-12 m-1"
-            src="/favicon.svg"
-            alt="Favicon"
-          >
+          <a href="<?= url_to('home') ?>">
+            <img class="w-12 m-1" src="/favicon.svg" alt="Favicon">
+          </a>
         </div>
 
         <!-- NAV LINKS -->
-        <div>
+        <div id="navbar_links">
           <ul class="flex">
             <li>
               <a href="<?= url_to('home') ?>"> <?= lang('Navbar.home') ?> </a>
@@ -22,7 +20,9 @@
             <div onmouseleave="document.getElementById('category_menu').hidden = true">
 
               <!-- CATEGORY MENU -->
-              <li onmouseover="document.getElementById('category_menu').hidden = false" class="ml-3"><a href="#"> <?= lang('Navbar.categories') ?> </a></li>
+              <li onmouseover="document.getElementById('category_menu').hidden = false" class="ml-7">
+                <a href="#"> <?= lang('Navbar.categories') ?> </a>
+              </li>
               <ul id="category_menu" hidden class="bg-gray-100 text-gray-700 rounded-xl dark:bg-gray-800 dark:text-gray-100 absolute px-7">
                 <li class="my-5"><a href="#">Windows</a></li>
                 <li><a href="#">Linux</a></li>
@@ -43,3 +43,9 @@
     </div>
   </div>
 </header>
+
+<script>
+  // To hide links on login view
+  if ( window.location.href.includes('login') )
+    document.getElementById('navbar_links').hidden = true;
+</script>

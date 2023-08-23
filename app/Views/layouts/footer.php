@@ -14,3 +14,11 @@
     </div>
 
 </footer>
+
+<script>
+
+  // To down footer on login view
+  if ( window.location.href.includes('login') )
+    document.getElementsByTagName('footer')[0].className += ' ' + 'absolute bottom-0 right-0 left-0';
+
+</script>

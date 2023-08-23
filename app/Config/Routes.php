@@ -47,6 +47,9 @@ $routes->get('/{locale}/dashboard', 'DashboardController', [
 $routes->get('/{locale}/login', 'LoginController', [
   'as' => 'login'
 ]);
+$routes->post('/{locale}/login', 'LoginController::store', [
+  'as' => 'login'
+]);
 
 /*
  * --------------------------------------------------------------------

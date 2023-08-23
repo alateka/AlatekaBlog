@@ -5,8 +5,8 @@
  *
  */
 return [
-  'home' => 'Inicio',
-  'categories' => 'Categorías',
-  'profile' => 'Perfil',
+  'home'        => 'Inicio',
+  'categories'  => 'Categorías',
+  'profile'     => 'Perfil',
   'development' => 'Desarrollo'
 ];
