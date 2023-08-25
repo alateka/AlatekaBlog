@@ -1,10 +1,10 @@
 .env
 vendor/
-writable/debugbar/
-writable/logs/
 .vscode/
 tailwindcss-linux-x64
 public/css/app.css
 composer.lock
 app/Database/Seeds/Database.db
-writable/session/
+writable/session/ci_session*
+writable/debugbar/debugbar_*
+writable/logs/log-*
