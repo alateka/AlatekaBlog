@@ -8,8 +8,11 @@ class DashboardController extends BaseController
 {
     public function index()
     {
-      return view('pages/dashboard', [
-        'globalData' => $this->globalData
-      ]);
+      if( session('user') )
+        return view('pages/dashboard', [
+          'globalData' => $this->globalData
+        ]);
+    
+      return redirect('login');
     }
 }

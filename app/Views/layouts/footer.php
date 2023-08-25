@@ -3,7 +3,6 @@
 
     <!-- INFO -->
     <div>
-      <span> &copy; <?= date('Y') ?> - </span>
       <span> <?= lang('Footer.description') ?> </span>
       <p> <?= lang('Footer.license') ?> </p>
     </div>
@@ -18,7 +17,7 @@
 <script>
 
   // To down footer on login view
-  if ( window.location.href.includes('login') )
+  if ( !window.location.href.includes('home') )
     document.getElementsByTagName('footer')[0].className += ' ' + 'absolute bottom-0 right-0 left-0';
 
 </script>

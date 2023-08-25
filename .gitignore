@@ -7,3 +7,4 @@ tailwindcss-linux-x64
 public/css/app.css
 composer.lock
 app/Database/Seeds/Database.db
+writable/session/

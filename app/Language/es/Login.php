@@ -5,8 +5,9 @@
  *
  */
 return [
-  'email'          => 'Correo electrónico',
-  'password'       => 'Contraseña',
-  'login'          => 'Iniciar sesión',
-  'user_not_found' => 'Usuario no encontrado en la base de datos'
+  'email'                 => 'Correo electrónico',
+  'password'              => 'Contraseña',
+  'login'                 => 'Iniciar sesión',
+  'credentials_not_found' => 'Credenciales no encontradas',
+  'logout'                => 'Cerrar sesión'
 ];

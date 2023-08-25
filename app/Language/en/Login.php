@@ -5,8 +5,9 @@
  *
  */
 return [
-  'email'          => 'eMail',
-  'password'       => 'Password',
-  'login'          => 'Login',
-  'user_not_found' => 'User not found on data base'
+  'email'                 => 'eMail',
+  'password'              => 'Password',
+  'login'                 => 'Login',
+  'credentials_not_found' => 'Credentials not found',
+  'logout'                => 'Logout'
 ];

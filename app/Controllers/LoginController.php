@@ -9,12 +9,15 @@ class LoginController extends BaseController
 {
   public function index()
   {
+    if( session('user') )
+      return redirect('dashboard');
+    
     return view('pages/login', [
       'globalData' => $this->globalData
     ]);
   }
 
-  public function store()
+  public function login()
   {
     // -----------
     // VALIDATIONS
@@ -42,14 +45,29 @@ class LoginController extends BaseController
     // Find user on DB
     $user = $userModel->getUserByEmail( $this->request->getVar('email'));
     if ( !$user )
-      return redirect()->back()->withInput()->with('error', lang('Login.user_not_found'));
+      return redirect()->back()->withInput()->with('error', lang('Login.credentials_not_found'));
 
-    // Check password & return dashboard view
+    // Check password
     if ( !password_verify($this->request->getVar('password'), $user['password']) )
-      return redirect()->back()->withInput()->with('error', lang('Login.user_not_found'));
+      return redirect()->back()->withInput()->with('error', lang('Login.credentials_not_found'));
 
-    return view('pages/dashboard', [
-      'globalData' => $this->globalData
+    
+    // Set session
+    session()->set([
+      'user' => [
+        'username' => $user['username'],
+        'email' => $user['email']
+      ]
     ]);
+
+    // Redirect dashboard page
+    return redirect('dashboard');
+  }
+
+
+  public function logout()
+  {
+    session()->destroy();
+    return redirect('home');
   }
 }

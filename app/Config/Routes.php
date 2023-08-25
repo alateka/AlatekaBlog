@@ -31,10 +31,10 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 
 // DEFAULT REDIRECT
-$routes->addRedirect('/', 'index.php/en');
+$routes->addRedirect('/', 'index.php/en/home');
 
 // HOME
-$routes->get('/{locale}', 'BlogController', [
+$routes->get('/{locale}/home', 'BlogController', [
   'as' => 'home'
 ]);
 
@@ -47,8 +47,11 @@ $routes->get('/{locale}/dashboard', 'DashboardController', [
 $routes->get('/{locale}/login', 'LoginController', [
   'as' => 'login'
 ]);
-$routes->post('/{locale}/login', 'LoginController::store', [
+$routes->post('/{locale}/login', 'LoginController::login', [
   'as' => 'login'
+]);
+$routes->get('/{locale}/logout', 'LoginController::logout', [
+  'as' => 'logout'
 ]);
 
 /*
