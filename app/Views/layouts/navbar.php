@@ -1,3 +1,4 @@
+<?php use App\Database\Enums\PostCategory; ?>
 <!-- NAVBAR -->
 <header class="mb-28">
   <div class="relative">
@@ -33,11 +34,31 @@
                   </a>
                 </li>
                 <ul id="category_menu" hidden class="bg-gray-100 text-gray-700 rounded-xl dark:bg-gray-800 dark:text-gray-100 absolute px-7 text-center">
-                  <li class="my-5"><a class="base_button" href="#">Windows</a></li>
-                  <li><a class="base_button" href="#">Linux</a></li>
-                  <li class="my-5 "><a class="base_button" href="#">Software</a></li>
-                  <li><a class="base_button" href="#">Hardware</a></li>
-                  <li class="my-5 "><a class="base_button" href="#"> <?= lang('Navbar.development') ?> </a></li>
+                  <li class="my-5">
+                    <a class="base_button" href="<?= url_to('home') . '?category='. 2 ?>">
+                      Windows
+                    </a>
+                  </li>
+                  <li>
+                    <a class="base_button" href="<?= url_to('home') . '?category='. 1 ?>">
+                      Linux
+                    </a>
+                  </li>
+                  <li class="my-5 ">
+                    <a class="base_button" href="<?= url_to('home') . '?category='. 3 ?>">
+                      Software
+                    </a>
+                  </li>
+                  <li>
+                    <a class="base_button" href="<?= url_to('home') . '?category='. 4 ?>">
+                      Hardware
+                    </a>
+                  </li>
+                  <li class="my-5 ">
+                    <a class="base_button" href="<?= url_to('home') . '?category='. 5 ?>">
+                      <?= lang('Navbar.development') ?>
+                    </a>
+                  </li>
                 </ul>
 
               </div>

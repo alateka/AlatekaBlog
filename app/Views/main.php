@@ -9,7 +9,7 @@
 
     <!-- Show all posts from back-end -->
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-9 lg:gap-16 lg:p-7">
-    <?php foreach ($posts['data'] as $post): ?>
+    <?php foreach ($data['posts'] as $post): ?>
 
       <!-- POST -->
       <div class="container_base p-3">
@@ -26,7 +26,7 @@
 
     <!-- PAGINATION -->
     <div class="flex md:justify-end justify-center m-7">
-      <?= $posts['pager']->makeLinks($posts['page'], $posts['perPage'], $posts['total'], 'pagination') ?>
+      <?= $data['pagination']['pager']->makeLinks($data['pagination']['page'], $data['pagination']['perPage'], $data['pagination']['total'], 'pagination') ?>
     </div>
 
   </div>

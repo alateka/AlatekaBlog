@@ -11,15 +11,24 @@ class MainController extends BaseController
   public function index(): string
   {
     $postModel = new PostModel();
-    $posts['page'] = isset($_GET['page']) ? $_GET['page'] : 1;
-    $posts['perPage'] = 12;
-    $posts['total'] = $postModel->countAll();
-    $posts['data'] = $postModel->paginate($posts['perPage']);
-    $posts['pager'] = $postModel->pager;
+    $perPage = 12;
+
+    $categoryFilter = '';
+    if( $this->request->getVar('category') ){
+       $categoryFilter = $this->request->getVar('category');
+    }
 
     return view('main', [
       'globalData' => $this->globalData,
-      'posts'      => $posts
+      'data'      => [
+        'posts'      => strlen($categoryFilter) > 0 ? $postModel->where('category', $categoryFilter)->paginate($perPage) : $postModel->paginate($perPage),
+        'pagination' => [
+          'total'   => $postModel->countAll(),
+          'page'    => $_GET['page'] ?? 1,
+          'pager'   => $postModel->pager,
+          'perPage' => $perPage
+        ]
+      ]
     ]);
   }
 }

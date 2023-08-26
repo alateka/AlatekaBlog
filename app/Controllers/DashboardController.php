@@ -14,7 +14,7 @@ class DashboardController extends BaseController
 
         return view('pages/dashboard', [
           'globalData'    => $this->globalData,
-          'postsCounter' => $postsCounter->countAllResults()
+          'postsCounter' => $postsCounter->countAll()
         ]);
       }
     
