@@ -15,11 +15,11 @@ class PostSeeder extends Seeder
 
     for ($i=0; $i < 33; $i++) {
       $data = [
-        'title'       => $faker->word(),
-        'description' => $faker->text(300),
-        'user_id'     => 1,
-        'image_url'   => 'https://picsum.photos/500/300',
-        'category'    => random_int(1, 5)
+        'title'     => $faker->word(),
+        'content'   => $faker->text(300),
+        'user_id'   => 1,
+        'image_url' => 'https://picsum.photos/500/300',
+        'category'  => random_int(1, 5)
       ];
       $factory->insert($data);
     }

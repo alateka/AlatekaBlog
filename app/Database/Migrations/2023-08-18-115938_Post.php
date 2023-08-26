@@ -19,7 +19,7 @@ class Post extends Migration
         'constraint'     => 50,
         'null'           => false
       ],
-      'description' => [
+      'content' => [
         'type'           => 'TEXT',
         'constraint'     => 1000,
         'null'           => false

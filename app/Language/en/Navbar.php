@@ -8,5 +8,8 @@ return [
   'home'        => 'Home',
   'categories'  => 'Categories',
   'profile'     => 'Profile',
-  'development' => 'Development'
+  'development' => 'Development',
+  'dark_mode'   => 'Dark',
+  'light_mode'  => 'Light',
+  'dashboard'   => 'Dashboard'
 ];

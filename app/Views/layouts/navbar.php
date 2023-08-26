@@ -1,7 +1,7 @@
 <!-- NAVBAR -->
 <header class="mb-28">
   <div class="relative">
-    <div class="fixed top-0 left-0 right-0">
+    <div class="fixed ml-3 top-0 left-0 right-0">
       <nav class="navbar flex justify-between items-center p-3">
 
         <!-- LOGO -->
@@ -12,59 +12,88 @@
         </div>
 
         <!-- NAV LINKS -->
-        <div id="navbar_links">
+        <div>
           <ul class="flex">
+            <!-- GO TO HOME -->
             <li>
-              <a href="<?= url_to('home') ?>"> <?= lang('Navbar.home') ?> </a>
+              <a class="base_button flex items-center" href="<?= url_to('home') ?>">
+                <span class="material-symbols-outlined mr-1">home</span>
+                <span> <?= lang('Navbar.home') ?></span>
+              </a>
             </li>
 
             <?php if ( str_contains(current_url(), 'home') ): ?>
               <div onmouseleave="document.getElementById('category_menu').hidden = true">
 
                 <!-- CATEGORY MENU -->
-                <li onmouseover="document.getElementById('category_menu').hidden = false" class="ml-7">
-                  <a href="#"> <?= lang('Navbar.categories') ?> </a>
+                <li onmouseover="document.getElementById('category_menu').hidden = false">
+                  <a class="base_button flex items-center" href="#">
+                    <span class="material-symbols-outlined mr-1">category</span>
+                    <span> <?= lang('Navbar.categories') ?></span>
+                  </a>
                 </li>
-                <ul id="category_menu" hidden class="bg-gray-100 text-gray-700 rounded-xl dark:bg-gray-800 dark:text-gray-100 absolute px-7">
-                  <li class="my-5"><a href="#">Windows</a></li>
-                  <li><a href="#">Linux</a></li>
-                  <li class="my-5"><a href="#">Software</a></li>
-                  <li><a href="#">Hardware</a></li>
-                  <li class="my-5"><a href="#"> <?= lang('Navbar.development') ?> </a></li>
+                <ul id="category_menu" hidden class="bg-gray-100 text-gray-700 rounded-xl dark:bg-gray-800 dark:text-gray-100 absolute px-7 text-center">
+                  <li class="my-5"><a class="base_button" href="#">Windows</a></li>
+                  <li><a class="base_button" href="#">Linux</a></li>
+                  <li class="my-5 "><a class="base_button" href="#">Software</a></li>
+                  <li><a class="base_button" href="#">Hardware</a></li>
+                  <li class="my-5 "><a class="base_button" href="#"> <?= lang('Navbar.development') ?> </a></li>
                 </ul>
 
               </div>
             <?php endif; ?>
+
+            <div class="border-l border-gray-400 mx-3"></div>
             
+            <?php if ( session('user') ): ?>
+              <!-- GO TO DASHBOARD -->
+              <li>
+                <a class="base_button flex items-center" href="<?= url_to('dashboard') ?>">
+                  <span class="material-symbols-outlined mr-1">dashboard</span>
+                  <span> <?= lang('Navbar.dashboard') ?></span>
+                </a>
+              </li>
+              <!-- LOGOUT -->
+              <li>
+                <a class="base_button flex items-center" href="<?= url_to('logout') ?>">
+                  <span class="material-symbols-outlined mr-1">logout</span>
+                  <span> <?= lang('Login.logout') ?> </span>
+                </a>
+              </li>
+            <?php endif; ?>
+
+            <!-- THEME SWAP (DARK / LIGHT) -->
+            <li class="flex items-center">
+              <div onclick="setDarkTheme()" id="dark_mode">
+                <div class="cursor-pointer flex items-center base_button">
+                  <span class="material-symbols-outlined mr-1">dark_mode</span>
+                  <span> <?= lang('Navbar.dark_mode') ?> </span>
+                </div>
+              </div>
+              <div onclick="setLightTheme()" id="light_mode">
+                <div class="cursor-pointer flex items-center base_button">
+                  <span class="material-symbols-outlined mr-1">light_mode</span>
+                  <span> <?= lang('Navbar.light_mode') ?> </span>
+                </div>
+              </div>
+            </li>
+
           </ul>
-        </div>
-
-        <div class="flex">
-          
-          <?php if ( session('user') ): ?>
-            <a class="mr-7" href="<?= url_to('logout') ?>"> <?= lang('Login.logout') ?> </a>
-          <?php endif; ?>
-
-          <!-- THEME SWAP (Dark / Light) -->
-          <div onclick="setDarkTheme()" id="dark_mode">
-            <div class="cursor-pointer">
-              <span class="material-symbols-outlined">dark_mode</span>
-            </div>
-          </div>
-          <div onclick="setLightTheme()" id="light_mode">
-            <div class="cursor-pointer">
-              <span class="material-symbols-outlined">light_mode</span>
-            </div>
-          </div>
 
         </div>
-
       </nav>
     </div>
   </div>
 </header>
 
 <script>
+
+  // Down navbar on login view
+  if ( !window.location.href.includes('home') )
+    document.getElementsByTagName('nav')[0].className += ' ' + 'mr-3';
+
+
+  // Set themes (Dark / Light)
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
     document.getElementById('dark_mode').hidden = true;
@@ -86,5 +115,4 @@
     document.getElementById('light_mode').hidden = true;
     document.getElementById('dark_mode').hidden = false;
   }
-
 </script>

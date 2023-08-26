@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Blog - Spanish
+ * Base - Spanish
  *
  */
 return [

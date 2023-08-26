@@ -33,15 +33,34 @@ $routes->setAutoRoute(false);
 // DEFAULT REDIRECT
 $routes->addRedirect('/', 'index.php/en/home');
 
+// -------------------------------------------------------------------
+
 // HOME
-$routes->get('/{locale}/home', 'BlogController', [
+$routes->get('/{locale}/home', 'MainController', [
   'as' => 'home'
 ]);
+
+// -------------------------------------------------------------------
 
 // DASHBOARD
 $routes->get('/{locale}/dashboard', 'DashboardController', [
   'as' => 'dashboard'
 ]);
+
+// -------------------------------------------------------------------
+
+// POSTS
+$routes->get('/{locale}/post', 'PostController', [
+  'as' => 'post'
+]);
+$routes->post('/{locale}/post', 'PostController::store', [
+  'as' => 'post'
+]);
+$routes->get('/{locale}/post/(:num)', 'PostController::show/$1', [
+  'as' => 'show_post'
+]);
+
+// -------------------------------------------------------------------
 
 // LOGIN
 $routes->get('/{locale}/login', 'LoginController', [
@@ -53,6 +72,8 @@ $routes->post('/{locale}/login', 'LoginController::login', [
 $routes->get('/{locale}/logout', 'LoginController::logout', [
   'as' => 'logout'
 ]);
+
+// -------------------------------------------------------------------
 
 /*
  * --------------------------------------------------------------------

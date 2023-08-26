@@ -5,6 +5,6 @@
  *
  */
 return [
-  'description' => 'AlatekaBlog is CMS project & open source',
-  'license'     => 'Released under the GPL3'
+  'description' => 'AlatekaBlog is a CMS project mini & open source',
+  'page_rendered_in' => 'Page rendered in'
 ];

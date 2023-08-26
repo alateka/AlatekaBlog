@@ -13,7 +13,7 @@ class PostBaseModel extends Model
   protected $returnType       = 'array';
   protected $useSoftDeletes   = false;
   protected $protectFields    = true;
-  protected $allowedFields    = ['title', 'description', 'image_url', 'user_id', 'category'];
+  protected $allowedFields    = ['title', 'content', 'image_url', 'user_id', 'category'];
 
   // Dates
   protected $useTimestamps = true;
