@@ -1,16 +1,16 @@
 <?php $pager->setSurroundCount(5) ?>
 
 <nav class="container_base p-3" aria-label="Page navigation">
-  <ul id="pagination" class="flex">
+  <ul class="flex">
   <?php if ($pager->hasPrevious()) : ?>
     <li>
-      <a class="base_button" href="<?= $pager->getFirst() ?>" aria-label="<?= lang('Pager.first') ?>">
-        <span aria-hidden="true"><?= lang('Pager.first') ?></span>
+      <a class="base_button" href="<?= $pager->getFirst() ?>" aria-label="<?= lang('Pagination.first') ?>">
+        <span aria-hidden="true"><?= lang('Pagination.first') ?></span>
       </a>
     </li>
     <li>
-      <a class="base_button" href="<?= $pager->getPrevious() ?>" aria-label="<?= lang('Pager.previous') ?>">
-        <span aria-hidden="true"><?= lang('Pager.previous') ?></span>
+      <a class="base_button" href="<?= $pager->getPrevious() ?>" aria-label="<?= lang('Pagination.previous') ?>">
+        <span aria-hidden="true"><?= lang('Pagination.previous') ?></span>
       </a>
     </li>
   <?php endif ?>
@@ -29,13 +29,13 @@
 
   <?php if ($pager->hasNext()) : ?>
     <li>
-      <a class="base_button" href="<?= $pager->getNext() ?>" aria-label="<?= lang('Pager.next') ?>">
-        <span aria-hidden="true"><?= lang('Pager.next') ?></span>
+      <a class="base_button" href="<?= $pager->getNext() ?>" aria-label="<?= lang('Pagination.next') ?>">
+        <span aria-hidden="true"><?= lang('Pagination.next') ?></span>
       </a>
     </li>
     <li>
-      <a class="base_button" href="<?= $pager->getLast() ?>" aria-label="<?= lang('Pager.last') ?>">
-        <span aria-hidden="true"><?= lang('Pager.last') ?></span>
+      <a class="base_button" href="<?= $pager->getLast() ?>" aria-label="<?= lang('Pagination.last') ?>">
+        <span aria-hidden="true"><?= lang('Pagination.last') ?></span>
       </a>
     </li>
   <?php endif ?>
