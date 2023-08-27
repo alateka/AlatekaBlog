@@ -22,6 +22,11 @@
     @apply bg-gray-100/80 text-gray-700 rounded-b-xl backdrop-blur-md shadow-md dark:bg-gray-800/90 dark:text-gray-100;
   }
 
+  /* FOOTER */
+  .footer {
+    @apply bg-gray-100 text-gray-700 rounded-t-xl shadow-md dark:bg-gray-800 dark:text-gray-100 border-x-2 border-t-2 dark:border-gray-900 border-gray-300;
+  }
+
   /* CONTAINER BASE */
   .container_base {
     @apply bg-gray-100 text-gray-700 rounded-xl shadow-md dark:bg-gray-800 dark:text-gray-100 border-2 dark:border-gray-900 border-gray-300;
@@ -44,6 +49,6 @@
 
   /* BASE BUTTONS */
   .base_button {
-    @apply border dark:border-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-900 border-gray-100/5 hover:bg-gray-200 hover:border-gray-300 duration-200 p-2 rounded-xl;
+    @apply border dark:border-gray-800/5 dark:hover:bg-gray-700 dark:hover:border-gray-900 border-gray-100/5 hover:bg-gray-200 hover:border-gray-300 duration-200 p-2 rounded-xl;
   }
 }

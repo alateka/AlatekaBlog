@@ -1,5 +1,5 @@
 <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
-<footer class="container_base flex justify-between ml-3 p-3">
+<footer class="footer flex justify-between ml-3 p-3">
 
     <!-- INFO -->
     <div class="flex flex-col justify-between">
