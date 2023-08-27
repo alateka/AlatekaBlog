@@ -13,10 +13,10 @@ class PostSeeder extends Seeder
     $factory = new PostModel();
     $faker = Factory::create();
 
-    for ($i=0; $i < 33; $i++) {
+    for ($i=0; $i < 155; $i++) {
       $data = [
         'title'     => $faker->word(),
-        'content'   => $faker->text(300),
+        'content'   => $faker->text(500),
         'user_id'   => 1,
         'image_url' => 'https://picsum.photos/500/300',
         'category'  => random_int(1, 5),

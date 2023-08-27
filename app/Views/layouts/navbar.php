@@ -6,9 +6,7 @@
 
         <!-- LOGO -->
         <div>
-          <a href="<?= url_to('home') ?>">
-            <img class="w-12 m-1" src="/favicon.svg" alt="Favicon">
-          </a>
+          <span class="material-symbols-outlined mr-1">rss_feed</span>
         </div>
 
         <!-- NAV LINKS -->
