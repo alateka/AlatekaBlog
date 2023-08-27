@@ -1,3 +1,5 @@
+<?php $changeLanguage = $globalData['locale'] === 'es' ? '/en' : '/es' ?>
+
 <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
 <footer class="footer flex justify-between ml-3 p-3">
 
@@ -8,7 +10,7 @@
       <span> <?= lang('Footer.description') ?> </span>
 
       <!-- CHANGE LANGUAGE -->
-      <a class="base_button flex" href="<?= base_url($globalData['locale'] === 'es' ? 'en' : 'es') . '/home' ?>">
+      <a class="base_button flex" href="<?= base_url('index.php') . $changeLanguage . '/home' ?>">
         <span class="material-symbols-outlined mr-1">language</span>
         <span class="mr-1"> <?= lang('Footer.change_to') ?> </span>
         <span> <?= $globalData['locale'] === 'es' ? lang('Base.language_en') : lang('Base.language_es') ?> </span>
