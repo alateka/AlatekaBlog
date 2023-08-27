@@ -1,4 +1,10 @@
-### Setup
+# CMS project mini | Developed with CodeIgniter 4
+
+### Images:
+![Demo1](Demo1.webp)
+![Demo2](Demo2.webp)
+
+### Setup:
 
 1. Create db file with ".sqlite" or ".db"
 
