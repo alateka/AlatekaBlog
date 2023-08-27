@@ -21,9 +21,9 @@ class MainController extends BaseController
     return view('main', [
       'globalData' => $this->globalData,
       'data'      => [
-        'posts'      => strlen($categoryFilter) > 0 ? $postModel->where('category', $categoryFilter)->paginate($perPage) : $postModel->paginate($perPage),
+        'posts'      => strlen($categoryFilter) > 0 ? $postModel->where('category', $categoryFilter)->where('language', $this->globalData['locale'])->orderBy('created_at', 'desc')->paginate($perPage) : $postModel->where('language', $this->globalData['locale'])->orderBy('created_at', 'desc')->paginate($perPage),
         'pagination' => [
-          'total'   => $postModel->countAll(),
+          'total'   => strlen($categoryFilter) > 0 ? $postModel->where('category', $categoryFilter)->where('language', $this->globalData['locale'])->countAllResults() : $postModel->where('language', $this->globalData['locale'])->countAllResults(),
           'page'    => $_GET['page'] ?? 1,
           'pager'   => $postModel->pager,
           'perPage' => $perPage

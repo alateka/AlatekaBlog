@@ -22,10 +22,11 @@ class PostController extends BaseController
 
     // Validations
     if ( !$this->validate([
-        'title'    => 'required|max_length[50]',
-        'content' => 'required|max_length[1000]',
+        'title'     => 'required|max_length[50]',
+        'content'   => 'required|max_length[1000]',
         'image_url' => 'required|max_length[300]',
-        'category' => 'required|numeric'
+        'category'  => 'required|numeric',
+        'language'  => 'required|max_length[2]'
       ])
     ) return redirect()->back()->withInput();
 
@@ -36,7 +37,8 @@ class PostController extends BaseController
       'content'   => $this->request->getVar('content'),
       'user_id'   => session('user')['id'],
       'image_url' => $this->request->getVar('image_url'),
-      'category'  => $this->request->getVar('category')
+      'category'  => $this->request->getVar('category'),
+      'language'  => $this->request->getVar('language')
     ]);
 
     // Redirect dashboard page

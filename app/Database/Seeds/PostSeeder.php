@@ -19,7 +19,8 @@ class PostSeeder extends Seeder
         'content'   => $faker->text(300),
         'user_id'   => 1,
         'image_url' => 'https://picsum.photos/500/300',
-        'category'  => random_int(1, 5)
+        'category'  => random_int(1, 5),
+        'language'  => random_int(1, 2) === 1 ? 'es' : 'en' 
       ];
       $factory->insert($data);
     }

@@ -1,4 +1,37 @@
-<?php helper('form') ?>
+<?php 
+  use App\Database\Enums\PostCategory;
+
+  helper('form');
+  
+  // Category options to dropdown
+  $categories = [];
+  foreach (array_column(PostCategory::cases(), 'value') as $value) {
+    switch ($value) {
+      case PostCategory::LINUX->value:
+        $categories[PostCategory::LINUX->value] = 'Linux';
+        break;
+      
+      case PostCategory::WINDOWS->value:
+        $categories[PostCategory::WINDOWS->value] = 'Windows';
+        break;
+    
+      case PostCategory::SOFTWARE->value:
+        $categories[PostCategory::SOFTWARE->value] = 'Software';
+        break;
+
+      case PostCategory::HARDWARE->value:
+        $categories[PostCategory::HARDWARE->value] = 'Hardware';
+        break;
+
+      case PostCategory::DEVELOPMENT->value:
+        $categories[PostCategory::DEVELOPMENT->value] = lang('Navbar.development');
+        break;
+
+      default:
+        break;
+    }
+  }
+?>
 <?= $this->extend('layouts/base') ?>
 
 <?= $this->section('content') ?>
@@ -34,10 +67,16 @@
       <span class="error mt-3"> <?= session('_ci_validation_errors.image_url') ?> </span>
     <?php endif; ?>
 
-    <!-- CATEGORY INPUT + SHOW ERROR -->
-    <?= form_input(['value' => old('category'), 'type' => 'number', 'name' => 'category', 'class' => 'form_input mt-7', 'placeholder' => lang('Post.category')]) ?>
+    <!-- CATEGORY DROPDOWN + SHOW ERROR -->
+    <?= form_dropdown('category', $categories, [], ['class' => 'form_input mt-7']) ?>
     <?php if ( session('_ci_validation_errors.category') ): ?>
       <span class="error mt-3"> <?= session('_ci_validation_errors.category') ?> </span>
+    <?php endif; ?>
+
+    <!-- LANGUAGE DROPDOWN + SHOW ERROR -->
+    <?= form_dropdown('language', ['es' => 'ES', 'en' => 'EN'], [], ['class' => 'form_input mt-7']) ?>
+    <?php if ( session('_ci_validation_errors.language') ): ?>
+      <span class="error mt-3"> <?= session('_ci_validation_errors.language') ?> </span>
     <?php endif; ?>
 
     <!-- SUBMIT BUTTON -->

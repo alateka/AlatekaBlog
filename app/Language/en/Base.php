@@ -6,9 +6,9 @@
  */
 return [
   'title'              => 'Home',
-  'metaDescription'    => 'This is my blog',
-  'metaKeywords'       => 'computer, linux, windows',
-  'languageName_en'    => 'English',
-  'languageName_es'    => 'Spanish (Español)',
+  'meta_description'    => 'This is my blog',
+  'meta_keywords'       => 'computer, linux, windows',
+  'language_en'    => 'English',
+  'language_es'    => 'Spanish (Español)',
   'method_not_allowed' => 'Method not allowed'
 ];

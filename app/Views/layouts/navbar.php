@@ -1,4 +1,3 @@
-<?php use App\Database\Enums\PostCategory; ?>
 <!-- NAVBAR -->
 <header class="mb-28">
   <div class="relative">
@@ -64,7 +63,7 @@
               </div>
             <?php endif; ?>
 
-            <div class="border-l border-gray-400 mx-3"></div>
+            <div class="border-l border-gray-300 dark:border-gray-600 mx-3"></div>
             
             <?php if ( session('user') ): ?>
               <!-- GO TO DASHBOARD -->

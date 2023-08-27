@@ -2,14 +2,27 @@
 <footer class="container_base flex justify-between ml-3 p-3">
 
     <!-- INFO -->
-    <div>
+    <div class="flex flex-col justify-between">
+
+      <!-- DESCRIPTION -->
       <span> <?= lang('Footer.description') ?> </span>
+
+      <!-- CHANGE LANGUAGE -->
+      <a class="base_button flex" href="<?= base_url($globalData['locale'] === 'es' ? 'en' : 'es') . '/home' ?>">
+        <span class="material-symbols-outlined mr-1">language</span>
+        <span class="mr-1"> <?= lang('Footer.change_to') ?> </span>
+        <span> <?= $globalData['locale'] === 'es' ? lang('Base.language_en') : lang('Base.language_es') ?> </span>
+      </a>
+
     </div>
 
     <!-- CMS VERSION -->
-    <div class="flex flex-col">
+    <div class="flex flex-col justify-around">
       <span> <?= $globalData['cmsCurrentVersion'] ?> </span>
-      <span> <?= lang('Footer.page_rendered_in') ?> {elapsed_time}s</span>
+      <div class="flex">
+        <span class="material-symbols-outlined mr-1">download_done</span>
+        <span> <?= lang('Footer.page_rendered_in') ?> {elapsed_time}s</span>
+      </div>
     </div>
 
 </footer>

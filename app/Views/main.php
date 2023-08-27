@@ -18,6 +18,7 @@
           <div class=" border-t border-gray-300 dark:border-gray-700 mt-5 mb-3"></div>
           <p class="font-bold text-lg"> <?= $post['title'] ?> </p>
           <p> <?= substr($post['content'], 0, 99) ?> ... </p>
+          <p class="text-xs text-right"> <?= str_contains($globalData['locale'], 'en') ? date_format(date_create($post['created_at']), 'Y-m-d') : date_format(date_create($post['created_at']), 'd/m/Y') ?> </p>
         </a>
       </div>
 
