@@ -10,7 +10,7 @@
 
       <!-- TITLE -->
       <div class="text-5xl font-extrabold container_base p-5">
-        <span class="bg-clip-text drop-shadow-md text-transparent bg-gradient-to-r from-emerald-500 to-green-500">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-green-500">
           <?= lang('Base.blog_owner') ?>
         </span>
       </div>
