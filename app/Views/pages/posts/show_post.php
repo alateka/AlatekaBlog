@@ -19,7 +19,7 @@
 
       <!-- CONTENT -->
       <div>
-        <span> <?= $postData['content'] ?> </span>
+        <?= $postData['content'] ?>
       </div>
 
     </div>

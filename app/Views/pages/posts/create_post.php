@@ -50,19 +50,19 @@
     <?php endif; ?>
     
     <!-- TITLE INPUT + SHOW ERROR -->
-    <?= form_input(['value' => old('title'), 'type' => 'text', 'name' => 'title', 'class' => 'form_input', 'placeholder' => lang('Post.title')]) ?>
+    <?= form_input(['type' => 'text', 'name' => 'title', 'class' => 'form_input', 'placeholder' => lang('Post.title')], old('title') ?? '') ?>
     <?php if ( session('_ci_validation_errors.title') ): ?>
       <span class="error mt-3"> <?= session('_ci_validation_errors.title') ?> </span>
     <?php endif; ?>
 
     <!-- CONTENT INPUT + SHOW ERROR -->
-    <?= form_input(['value' => old('content'), 'type' => 'text', 'name' => 'content', 'class' => 'form_input mt-7', 'placeholder' => lang('Post.content')]) ?>
+    <?= form_textarea(['rows' => 11, 'type' => 'text', 'name' => 'content', 'class' => 'text_area mt-7', 'placeholder' => lang('Post.content')], old('content') ?? '') ?>
     <?php if ( session('_ci_validation_errors.content') ): ?>
       <span class="error mt-3"> <?= session('_ci_validation_errors.content') ?> </span>
     <?php endif; ?>
 
     <!-- IMAGE URL INPUT + SHOW ERROR -->
-    <?= form_input(['value' => old('image_url'), 'type' => 'text', 'name' => 'image_url', 'class' => 'form_input mt-7', 'placeholder' => lang('Post.image_url')]) ?>
+    <?= form_input(['type' => 'text', 'name' => 'image_url', 'class' => 'form_input mt-7', 'placeholder' => lang('Post.image_url')], old('image_url') ?? '') ?>
     <?php if ( session('_ci_validation_errors.image_url') ): ?>
       <span class="error mt-3"> <?= session('_ci_validation_errors.image_url') ?> </span>
     <?php endif; ?>

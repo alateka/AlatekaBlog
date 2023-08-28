@@ -21,7 +21,7 @@ class Post extends Migration
       ],
       'content' => [
         'type'           => 'TEXT',
-        'constraint'     => 1000,
+        'constraint'     => 5000,
         'null'           => false
       ],
       'image_url' => [

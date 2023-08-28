@@ -23,7 +23,7 @@ class PostController extends BaseController
     // Validations
     if ( !$this->validate([
         'title'     => 'required|max_length[50]',
-        'content'   => 'required|max_length[1000]',
+        'content'   => 'required|max_length[5000]',
         'image_url' => 'required|max_length[300]',
         'category'  => 'required|numeric',
         'language'  => 'required|max_length[2]'
