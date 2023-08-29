@@ -1,7 +1,7 @@
 <?php $changeLanguage = $globalData['locale'] === 'es' ? '/en' : '/es' ?>
 
 <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
-<footer class="footer flex justify-between ml-3 p-3 h-20 text-xs">
+<footer class="footer flex justify-between p-3 h-20 text-xs">
 
     <!-- INFO -->
     <div class="flex flex-col justify-between">
@@ -19,13 +19,13 @@
     </div>
 
     <!-- INFO -->
-    <div class="flex flex-col justify-between">
+    <div class="hidden md:block">
 
       <!-- DESCRIPTION -->
       <span> <?= $globalData['cmsCurrentVersion'] ?> </span>
 
       <!-- CHANGE LANGUAGE -->
-      <div class="flex items-center">
+      <div class="flex items-center mt-3">
         <span class="material-symbols-outlined mr-1">download_done</span>
         <span> <?= lang('Footer.page_rendered_in') ?> {elapsed_time}s</span>
       </div>
