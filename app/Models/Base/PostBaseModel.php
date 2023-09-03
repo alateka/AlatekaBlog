@@ -22,8 +22,30 @@ class PostBaseModel extends Model
   protected $updatedField  = 'updated_at';
 
   // Validation
-  protected $validationRules      = [];
-  protected $validationMessages   = [];
+  protected $validationRules = [
+    'title'     => 'required|max_length[50]',
+    'content'   => 'required|max_length[5000]',
+    'image_url' => 'required|max_length[300]',
+    'category'  => 'required|numeric',
+    'language'  => 'required|max_length[2]'
+  ];
+  protected $validationMessages = [
+    'title' => [
+      'required' => 'Errors.post_fields.title.required'
+    ],
+    'content' => [
+      'required' => 'Errors.post_fields.content.required'
+    ],
+    'image_url' => [
+      'required' => 'Errors.post_fields.image_url.required'
+    ],
+    'category' => [
+      'required' => 'Errors.post_fields.category.required'
+    ],
+    'language' => [
+      'required' => 'Errors.post_fields.language.required'
+    ]
+  ];
   protected $skipValidation       = false;
   protected $cleanValidationRules = true;
 

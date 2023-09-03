@@ -1,6 +1,8 @@
-<?= $this->extend('layouts/base') ?>
-
-<?= $this->section('content') ?>
+<?php
+helper('form');
+$this->extend('layouts/base');
+$this->section('content');
+?>
   <div>
 
     <div class="flex justify-center items-center mb-7">
@@ -15,6 +17,18 @@
         </span>
       </div>
 
+    </div>
+
+    <!-- GENERIC MESSAGE ( OK | ERROR ) -->
+    <div class="text-center">
+
+      <?php if ( session('ok_message') ): ?>
+        <span class="ok_message"> <?= lang(session('ok_message')) ?> </span>
+
+      <?php elseif(session('error_message')): ?>
+        <span class="error_message"> <?= lang(session('error_message')) ?> </span>
+
+      <?php endif; ?>
     </div>
 
     <!-- Show all posts from back-end -->
@@ -37,11 +51,30 @@
           <p p> <?= substr($post['content'], 0, 99) ?> ... </p>
           
           <!-- DATE -->
-          <p class="text-xs text-right"> <?= str_contains($globalData['locale'], 'en') ? date_format(date_create($post['created_at']), 'Y-m-d') : date_format(date_create($post['created_at']), 'd/m/Y') ?> </p>
+          <p class="text-xs text-right"> <?= date_format(date_create($post['created_at']), str_contains($globalData['locale'], 'es') ? 'd/m/Y' : 'Y-m-d') ?> </p>
         
         </a>
-      </div>
 
+        <!-- POST ACTIONS -->
+        <?php if( session('user') ): ?>
+        <div class="flex justify-between mt-3">
+
+          <!-- POST DELETE ACTION -->
+          <div>
+            <?= form_open( url_to('delete_post', $post['id']) ) ?>
+            <?= form_hidden('_method', 'DELETE') ?>
+            <?= form_button(['type' => 'submit', 'name' => 'post_delete_button'], '<span class="material-symbols-outlined">delete</span>') ?>
+            <?= form_close() ?>
+          </div>
+
+          <!-- POST EDIT ACTION -->
+          <a href="<?= url_to('edit_post', $post['id'])  ?>">
+            <span class="material-symbols-outlined">edit</span>
+          </a>
+        </div>
+        <?php endif; ?>
+
+      </div>
     <?php endforeach ?>
     </div>
 

@@ -31,7 +31,7 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 
 // DEFAULT REDIRECT
-$routes->addRedirect('/', 'index.php/en/home');
+$routes->addRedirect('/', 'index.php/es/home');
 
 // -------------------------------------------------------------------
 
@@ -50,14 +50,23 @@ $routes->get('/{locale}/dashboard', 'DashboardController', [
 // -------------------------------------------------------------------
 
 // POSTS
-$routes->get('/{locale}/post', 'PostController', [
-  'as' => 'post'
+$routes->get('/{locale}/post/create', 'PostController::create', [
+  'as' => 'create_post'
 ]);
 $routes->post('/{locale}/post', 'PostController::store', [
-  'as' => 'post'
+  'as' => 'store_post'
+]);
+$routes->put('/{locale}/post/(:num)', 'PostController::update/$1', [
+  'as' => 'update_post'
+]);
+$routes->delete('/{locale}/post/(:num)', 'PostController::delete/$1', [
+  'as' => 'delete_post'
 ]);
 $routes->get('/{locale}/post/(:num)', 'PostController::show/$1', [
   'as' => 'show_post'
+]);
+$routes->get('/{locale}/post/(:num)/edit', 'PostController::edit/$1', [
+  'as' => 'edit_post'
 ]);
 
 // -------------------------------------------------------------------

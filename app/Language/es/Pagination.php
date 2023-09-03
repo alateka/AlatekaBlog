@@ -7,6 +7,6 @@
 return [
   'first'    => 'Primera',
   'previous' => 'Anterior',
-  'next'     => 'Siguiente',
+  'next'     => 'Mostrar mas',
   'last'     => 'Última'
 ];
