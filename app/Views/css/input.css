@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
+  html {
+    font-family: 'Ubuntu', sans-serif, Arial, Helvetica;
+  }
   ::-webkit-scrollbar-thumb{
     @apply bg-transparent shadow-sm
   }
@@ -32,19 +34,29 @@
     @apply bg-gray-100 text-gray-700 rounded-xl shadow-md dark:bg-gray-800 dark:text-gray-100 border-2 dark:border-gray-900 border-gray-300;
   }
 
-  /* CONTAINER BASE */
+  /* FORM INPUT */
   .form_input {
     @apply h-10 bg-gray-50 text-gray-700 rounded-xl shadow-md dark:bg-gray-900 dark:text-gray-100 border border-gray-400 dark:border-gray-500;
   }
 
-  /* CONTAINER BASE */
+  /* TEXT AREA */
+  .text_area {
+    @apply bg-gray-50 text-gray-700 rounded-xl shadow-md dark:bg-gray-900 dark:text-gray-100 border border-gray-400 dark:border-gray-500;
+  }
+
+  /* SUBMIT BUTTON */
   .submit_button {
     @apply duration-200 border border-gray-300 hover:bg-gray-200 hover:border-gray-200 dark:hover:border-gray-700 hover:border-8 dark:hover:bg-gray-700 h-11 bg-gray-50 text-gray-700 rounded-xl shadow-md dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700;
   }
 
-  /* CONTAINER BASE */
-  .error {
+  /* ERROR MESSAGE */
+  .error_message {
     @apply p-1 bg-red-100 text-red-700 rounded-xl shadow-md border dark:border-red-400 border-red-500 dark:bg-red-800 dark:text-red-100;
+  }
+
+  /* OK MESSAGE */
+  .ok_message {
+    @apply p-1 bg-green-100 text-green-700 rounded-xl shadow-md border dark:border-green-400 border-green-500 dark:bg-green-800 dark:text-green-100;
   }
 
   /* BASE BUTTONS */

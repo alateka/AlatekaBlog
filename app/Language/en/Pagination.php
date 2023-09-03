@@ -7,6 +7,6 @@
 return [
   'first'    => 'First',
   'previous' => 'Previous',
-  'next'     => 'Next',
+  'next'     => 'Show more',
   'last'     => 'Last'
 ];

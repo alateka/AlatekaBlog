@@ -7,7 +7,7 @@
         <p> <?= lang('Dashboard.total_posts') . ': ' . $postsCounter ?> </p>
       </div>
       <div class="container_base p-7">
-        <a class="base_button text-lg" href="<?= url_to('post') ?>"> <?= lang('Dashboard.create_post') ?> </a>
+        <a class="base_button text-lg" href="<?= url_to('create_post') ?>"> <?= lang('Dashboard.create_post') ?> </a>
       </div>
     </div>
 <?= $this->endSection() ?>
