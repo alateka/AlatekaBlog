@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\PostModel;
+use App\Models\UserModel;
 
 class PostController extends BaseController
 {
@@ -54,10 +55,13 @@ class PostController extends BaseController
       return $this->response->setStatusCode(405)->setBody(lang('Base.method_not_allowed'));
 
     $post = new PostModel();
+    $user = new UserModel();
+    $postData = $post->find($id);
 
     return view('pages/posts/show_post', [
       'globalData' => $this->globalData,
-      'postData'   => $post->find($id)
+      'postData'   => $postData,
+      'ownerData'  => $user->find($postData['user_id'])
     ]);
   }
 

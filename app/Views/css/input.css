@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
+  html {
+    font-family: 'Ubuntu', sans-serif, Arial, Helvetica;
+  }
   ::-webkit-scrollbar-thumb{
     @apply bg-transparent shadow-sm
   }
