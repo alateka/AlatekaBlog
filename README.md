@@ -11,7 +11,7 @@
 
 `touch app/Database/db_name.sqlite`
 
-2. Run container
+2. If you are using containers, run it
 
 `docker-compose up -d`
 
