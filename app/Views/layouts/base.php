@@ -22,19 +22,24 @@
 
   <body class="bg-gray-300 dark:bg-gray-700">
 
-    <!-- NAVBAR -->
-    <div>
-      <?= $this->include('layouts/navbar') ?>
-    </div>
+    <!-- This div holds nabvar top & footer bottom -->
+    <div class="flex flex-col min-h-screen">
 
-    <!-- CONTENT TO LOAD -->
-    <div>
-      <?= $this->renderSection('content') ?>
-    </div>
+      <!-- NAVBAR -->
+      <div>
+        <?= $this->include('layouts/navbar') ?>
+      </div>
 
-    <!-- FOOTER -->
-    <div>
-      <?= $this->include('layouts/footer') ?>
+      <!-- CONTENT TO LOAD -->
+      <div>
+        <?= $this->renderSection('content') ?>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="mt-auto"> <!-- It holds footer to bottom -->
+        <?= $this->include('layouts/footer') ?>
+      </div>
+
     </div>
 
   </body>

@@ -2,7 +2,7 @@
 <header class="mb-28">
   <div class="relative">
     <div class="fixed top-0 left-0 right-0">
-      <nav class="navbar flex justify-between items-center p-3">
+      <nav class="navbar">
 
         <!-- LOGO -->
         <div>

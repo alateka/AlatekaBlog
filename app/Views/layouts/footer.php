@@ -1,7 +1,7 @@
 <?php $changeLanguage = $globalData['locale'] === 'es' ? '/en' : '/es' ?>
 
 <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
-<footer class="footer flex justify-between p-3 h-20 text-xs">
+<footer class="footer">
 
     <!-- INFO -->
     <div class="flex flex-col justify-between">
@@ -33,11 +33,3 @@
     </div>
 
 </footer>
-
-<script>
-
-  // To down footer on login & post view
-  if ( !window.location.href.includes('home') && !window.location.href.includes('post') )
-    document.getElementsByTagName('footer')[0].className += ' ' + 'absolute bottom-0 right-0 left-0 mr-3';
-
-</script>
