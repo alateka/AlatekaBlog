@@ -23,7 +23,9 @@
   <body class="bg-gray-300 dark:bg-gray-700">
 
     <!-- NAVBAR -->
-    <?= $this->include('layouts/navbar') ?>
+    <div>
+      <?= $this->include('layouts/navbar') ?>
+    </div>
 
     <!-- CONTENT TO LOAD -->
     <div>
@@ -31,7 +33,9 @@
     </div>
 
     <!-- FOOTER -->
-    <?= $this->include('layouts/footer') ?>
+    <div>
+      <?= $this->include('layouts/footer') ?>
+    </div>
 
   </body>
 

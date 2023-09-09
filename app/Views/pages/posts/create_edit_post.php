@@ -46,7 +46,7 @@
   <!-- POST FORM -->
   <?= form_open($isEditing ? '{locale}/post/'.$postData['id'] : '{locale}/post', ['id' => 'create_edit_post', 'class' => 'flex flex-col mx-9 mt-7']) ?>
 
-    <?= form_hidden('_method', 'PUT') ?>
+    <?php if ($isEditing) echo form_hidden('_method', 'PUT') ?>
 
     <div class="text-3xl my-7">
       <span> <?= $isEditing ? lang('Post.edit_post') : lang('Post.create_post') ?> </span>
