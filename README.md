@@ -1,4 +1,5 @@
-# CMS project mini | Developed with CodeIgniter 4
+# CMS project mini
+## Developed with CodeIgniter 4 & Tailwind CSS
 
 ### Images:
 ![Demo1](Demo1.webp)
@@ -10,7 +11,7 @@
 
 `touch app/Database/db_name.sqlite`
 
-2. Run container
+2. If you are using containers, run it
 
 `docker-compose up -d`
 
