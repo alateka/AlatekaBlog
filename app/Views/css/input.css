@@ -26,12 +26,12 @@
 
   /* NAVBAR */
   .navbar {
-    @apply bg-gray-100/80 text-gray-700 rounded-b-xl backdrop-blur-md shadow-md dark:bg-gray-800/90 dark:text-gray-100;
+    @apply bg-gray-100/80 text-gray-700 rounded-b-xl backdrop-blur-md shadow-md dark:bg-gray-800/90 dark:text-gray-100 flex justify-between items-center p-3;
   }
 
   /* FOOTER */
   .footer {
-    @apply bg-gray-100 text-gray-700 rounded-t-xl shadow-md dark:bg-gray-800 dark:text-gray-100 border-x-2 border-t-2 dark:border-gray-900 border-gray-300;
+    @apply bg-gray-100 text-gray-700 rounded-t-xl shadow-md dark:bg-gray-800 dark:text-gray-100 border-x-2 border-t-2 dark:border-gray-900 border-gray-300 flex justify-between p-3 h-20 text-xs;
   }
 
   /* CONTAINER BASE */
