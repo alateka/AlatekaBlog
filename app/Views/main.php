@@ -12,7 +12,7 @@ $this->section('content');
 
       <!-- TITLE -->
       <div class="text-3xl md:text-5xl font-extrabold container_base p-5">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-green-500">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-lime-500 to-emerald-500">
           <?= lang('Base.blog_owner') ?>
         </span>
       </div>
@@ -32,32 +32,35 @@ $this->section('content');
     </div>
 
     <!-- Show all posts from back-end -->
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-9 lg:gap-16 lg:p-7">
+    <div class="posts_table">
     <?php foreach ($data['posts'] as $post): ?>
 
       <!-- POST -->
-      <div class="container_base p-3">
+      <div class="container_base p-3 hover:border-emerald-500 duration-150">
+
         <a href="<?= url_to('show_post', $post['id']) ?>">
-          
-          <!-- IMAGE -->
-          <img class="rounded-xl" src="<?= $post['image_url'] ?>" alt="Post image">
-          
-          <div class=" border-t border-gray-300 dark:border-gray-700 mt-5 mb-3"></div>
 
-          <!-- TITLE -->
-          <p class="font-bold text-lg"> <?= $post['title'] ?> </p>
+            <!-- DATE -->
+            <p class="text-xs text-right mb-3">
+              <?= date_format(date_create($post['created_at']), str_contains($globalData['locale'], 'es') ? 'd/m/Y' : 'Y-m-d') ?>
+            </p>
+            
+            <!-- IMAGE -->
+            <img  class="rounded-xl h-36 w-full object-cover" src="<?= $post['image_url'] ?>" alt="Post image">
+            
+            <div class=" border-t border-gray-300 dark:border-gray-700 mt-5 mb-3"></div>
 
-          <!-- CONTENT -->
-          <p p> <?= substr($post['content'], 0, 99) ?> ... </p>
-          
-          <!-- DATE -->
-          <p class="text-xs text-right"> <?= date_format(date_create($post['created_at']), str_contains($globalData['locale'], 'es') ? 'd/m/Y' : 'Y-m-d') ?> </p>
-        
+            <!-- TITLE -->
+            <p class="font-bold text-lg"> <?=  esc($post['title']) ?> </p>
+
+            <!-- CONTENT -->
+            <p> <?= substr($post['content'], 0, 99) ?>... </p>
+
         </a>
 
         <!-- POST ACTIONS -->
         <?php if( session('user') ): ?>
-        <div class="flex justify-between mt-3">
+        <div class="flex justify-between ">
 
           <!-- POST DELETE ACTION -->
           <div>

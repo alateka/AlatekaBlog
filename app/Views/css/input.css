@@ -19,6 +19,11 @@
 
 @layer components {
 
+  /* TABLE FOR POSTS */
+  .posts_table {
+    @apply grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-9 lg:gap-16 p-3 lg:p-7;
+  }
+
   /* NAVBAR */
   .navbar {
     @apply bg-gray-100/80 text-gray-700 rounded-b-xl backdrop-blur-md shadow-md dark:bg-gray-800/90 dark:text-gray-100;

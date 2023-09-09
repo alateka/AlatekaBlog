@@ -5,7 +5,7 @@
  *
  */
 return [
-  'description'      => 'AlatekaBlog es un mini proyecto CMS',
+  'description'      => 'AlatekaBlog',
   'page_rendered_in' => 'Página renderizada en',
   'change_to'        => 'Cambiar a'
 ];
