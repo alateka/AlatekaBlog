@@ -1,4 +1,5 @@
-# CMS project mini | Developed with CodeIgniter 4
+# CMS project mini
+## Developed with CodeIgniter 4 & Tailwind CSS
 
 ### Images:
 ![Demo1](Demo1.webp)
