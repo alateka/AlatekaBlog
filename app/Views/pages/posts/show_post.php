@@ -7,7 +7,7 @@
 
       <!-- TITLE -->
       <div class="text-center font-bold text-xl">
-        <span class="underline"> <?= $postData['title'] ?> </span>
+        <span class="underline"> <?= esc($postData['title']) ?> </span>
       </div>
 
       <!-- IMAGE -->
@@ -16,7 +16,7 @@
       </div>
 
       <div class="flex justify-between text-xs">
-        <span> <?= $ownerData['name'] . ' ' . $ownerData['last_name'] ?> </span>
+        <span> <?= esc($ownerData['name']) . ' ' . esc($ownerData['last_name']) ?> </span>
         <span> <?= date_format(date_create($postData['created_at']), str_contains($globalData['locale'], 'es') ? 'd/m/Y' : 'Y-m-d') ?> </span>
       </div>
 
@@ -24,7 +24,7 @@
 
       <!-- CONTENT -->
       <div class="text-xs lg:text-sm">
-        <?= $postData['content'] ?>
+        <?= esc($postData['content']) ?>
       </div>
 
     </div>
