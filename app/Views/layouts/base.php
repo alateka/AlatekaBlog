@@ -26,9 +26,7 @@
     <div class="flex flex-col min-h-screen">
 
       <!-- NAVBAR -->
-      <div>
-        <?= $this->include('layouts/navbar') ?>
-      </div>
+      <?= $this->include('layouts/navbar') ?>
 
       <!-- CONTENT TO LOAD -->
       <div>

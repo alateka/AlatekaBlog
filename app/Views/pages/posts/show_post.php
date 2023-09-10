@@ -2,7 +2,7 @@
 <?= $this->extend('layouts/base') ?>
 
 <?= $this->section('content') ?>
-  <div class="container_base m-9">
+  <div class="container_base mb-7 mx-0 lg:mx-9">
     <div class="m-9">
 
       <!-- TITLE -->
@@ -11,8 +11,8 @@
       </div>
 
       <!-- IMAGE -->
-      <div class="mt-3">
-        <img class="w-96 m-auto rounded-xl" src="<?= $postData['image_url'] ?>" alt="Image">
+      <div class="my-3">
+        <img class="w-32 lg:w-72 m-auto rounded-xl" src="<?= $postData['image_url'] ?>" alt="Image">
       </div>
 
       <div class="flex justify-between text-xs">
@@ -23,7 +23,7 @@
       <div class="border-b my-5 border-gray-300 dark:border-gray-700"></div>
 
       <!-- CONTENT -->
-      <div>
+      <div class="text-xs lg:text-sm">
         <?= $postData['content'] ?>
       </div>
 
