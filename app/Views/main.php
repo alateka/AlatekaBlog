@@ -51,10 +51,10 @@ $this->section('content');
             <div class=" border-t border-gray-300 dark:border-gray-700 mt-5 mb-3"></div>
 
             <!-- TITLE -->
-            <p class="font-bold text-lg"> <?=  esc($post['title']) ?> </p>
+            <p class="font-bold text-sm lg:text-lg"> <?=  esc($post['title']) ?> </p>
 
             <!-- CONTENT -->
-            <p> <?= substr($post['content'], 0, 99) ?>... </p>
+            <p class="text-xs lg:text-sm"> <?= esc(substr($post['content'], 0, 99)) ?>... </p>
 
         </a>
 
