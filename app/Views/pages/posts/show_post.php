@@ -24,7 +24,7 @@
 
       <!-- CONTENT -->
       <div class="text-xs lg:text-sm">
-        <?= esc($postData['content']) ?>
+        <?= $postData['content'] ?>
       </div>
 
     </div>

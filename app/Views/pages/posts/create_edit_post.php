@@ -64,7 +64,7 @@
     <?php endif; ?>
 
     <!-- CONTENT INPUT + SHOW ERROR -->
-    <?= form_textarea(['rows' => 11, 'type' => 'text', 'name' => 'content', 'class' => 'text_area mt-7', 'placeholder' => lang('Post.content')], old('content') ?? $textFields['content']) ?>
+    <?= form_textarea(['rows' => 11, 'type' => 'text', 'name' => 'content', 'class' => 'text_area mt-7', 'placeholder' => lang('Post.content')], old('content', null, 'raw') ?? $textFields['content']) ?>
     <?php if ( session('errors.content') ): ?>
       <span class="error_message mt-3"> <?= session('errors.content') ?> </span>
     <?php endif; ?>
