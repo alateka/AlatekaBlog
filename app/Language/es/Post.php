@@ -13,5 +13,6 @@ return [
   'edit_post'       => 'Modificar publicación',
   'create'          => 'Crear',
   'modify'          => 'Modificar',
-  'ok_post_deleted' => 'Entrada eliminada correctamente'
+  'ok_post_deleted' => 'Entrada eliminada correctamente',
+  'back'            => 'Atras'
 ];

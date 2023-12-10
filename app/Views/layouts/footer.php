@@ -21,9 +21,6 @@
     <!-- INFO -->
     <div class="hidden md:block">
 
-      <!-- DESCRIPTION -->
-      <span> <?= $globalData['cmsCurrentVersion'] ?> </span>
-
       <!-- CHANGE LANGUAGE -->
       <div class="flex items-center mt-3">
         <span class="material-symbols-outlined mr-1">download_done</span>

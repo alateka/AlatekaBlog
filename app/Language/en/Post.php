@@ -13,5 +13,6 @@ return [
   'edit_post'       => 'Edit blog post',
   'create'          => 'Create',
   'modify'          => 'Modify',
-  'ok_post_deleted' => 'OK, post deleted'
+  'ok_post_deleted' => 'OK, post deleted',
+  'back'            => 'Back'
 ];

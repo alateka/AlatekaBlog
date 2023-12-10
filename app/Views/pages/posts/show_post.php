@@ -5,6 +5,12 @@
   <div class="container_base mb-7 mx-0 lg:mx-9">
     <div class="m-9">
 
+      <!-- BACK -->
+      <a href="<?= url_to('home') ?>" class="flex base_button w-24">
+        <span class="material-symbols-outlined mr-1">keyboard_backspace</span>
+        <span><?= lang('Post.back') ?></span>
+      </a>
+
       <!-- TITLE -->
       <div class="text-center font-bold text-xl">
         <span class="underline"> <?= esc($postData['title']) ?> </span>
