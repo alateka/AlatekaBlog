@@ -1,2 +1,5 @@
-User-agent: *
-Disallow: 
+Sitemap: https://alateka.es/sitemap.xml 
+
+User-Agent: *
+Allow: /index.php
+Disallow:
