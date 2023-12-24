@@ -14,5 +14,6 @@ return [
   'create'          => 'Create',
   'modify'          => 'Modify',
   'ok_post_deleted' => 'OK, post deleted',
-  'back'            => 'Back'
+  'back'            => 'Back',
+  'cancel'          => 'Cancel'
 ];

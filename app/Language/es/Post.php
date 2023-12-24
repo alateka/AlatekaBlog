@@ -14,5 +14,6 @@ return [
   'create'          => 'Crear',
   'modify'          => 'Modificar',
   'ok_post_deleted' => 'Entrada eliminada correctamente',
-  'back'            => 'Atras'
+  'back'            => 'Atras',
+  'cancel'          => 'Cancelar'
 ];

@@ -41,7 +41,7 @@
 <?= $this->extend('layouts/base') ?>
 
 <?= $this->section('content') ?>
-  <div class="container_base text-center my-9 mx-auto w-11/12 md:w-3/5 xl:w-1/3">
+  <div class="container_base text-center mb-9 mx-auto w-11/12 md:w-3/5 xl:w-2/3">
 
   <!-- POST FORM -->
   <?= form_open($isEditing ? '{locale}/post/'.$postData['id'] : '{locale}/post', ['id' => 'create_edit_post', 'class' => 'flex flex-col mx-9 mt-7']) ?>
@@ -87,9 +87,14 @@
       <span class="error_message mt-3"> <?= session('errors.language') ?> </span>
     <?php endif; ?>
 
-    <!-- SUBMIT BUTTON -->
-    <?= form_submit('btnSubmit', $isEditing ? lang('Post.modify') : lang('Post.create'), ['class' => 'my-7 cursor-pointer submit_button']) ?>
-    
+    <!-- ACTION BUTTONS -->
+    <div class="flex justify-end">
+      <!-- CANCEL BUTTON -->
+      <a class="my-7 mr-5 cursor-pointer submit_button w-32 flex items-center justify-center" href="<?= url_to('home') ?>"> <?= lang('Post.cancel') ?> </a>
+      <!-- SUBMIT BUTTON -->
+      <?= form_submit('submit_button', $isEditing ? lang('Post.modify') : lang('Post.create'), ['class' => 'my-7 cursor-pointer submit_button w-32']) ?>
+    </div>
+
   <?php form_close() ?>
 
   </div>
