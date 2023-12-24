@@ -41,7 +41,7 @@
 <?= $this->extend('layouts/base') ?>
 
 <?= $this->section('content') ?>
-  <div class="container_base text-center mb-9 mx-auto w-11/12 md:w-3/5 xl:w-2/3">
+  <div class="container_base text-center mb-9 mx-auto w-11/12 xl:w-2/3">
 
   <!-- POST FORM -->
   <?= form_open($isEditing ? '{locale}/post/'.$postData['id'] : '{locale}/post', ['id' => 'create_edit_post', 'class' => 'flex flex-col mx-9 mt-7']) ?>
