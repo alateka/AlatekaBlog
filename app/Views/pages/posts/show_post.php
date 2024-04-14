@@ -13,24 +13,24 @@
 
       <!-- TITLE -->
       <div class="text-center font-bold text-xl">
-        <span class="underline"> <?= esc($postData['title']) ?> </span>
+        <span class="underline"> <?= esc($modelData['title']) ?> </span>
       </div>
 
       <!-- IMAGE -->
       <div class="my-3">
-        <img class="w-32 lg:w-72 m-auto rounded-xl" src="<?= $postData['image_url'] ?>" alt="Image">
+        <img class="w-32 lg:w-72 m-auto rounded-xl" src="<?= $modelData['image_url'] ?>" alt="Image">
       </div>
 
       <div class="flex justify-between text-xs">
         <span> <?= esc($ownerData['name']) . ' ' . esc($ownerData['last_name']) ?> </span>
-        <span> <?= date_format(date_create($postData['created_at']), str_contains($globalData['locale'], 'es') ? 'd/m/Y' : 'Y-m-d') ?> </span>
+        <span> <?= date_format(date_create($modelData['created_at']), str_contains($globalData['locale'], 'es') ? 'd/m/Y' : 'Y-m-d') ?> </span>
       </div>
 
       <div class="border-b my-5 border-gray-300 dark:border-gray-700"></div>
 
       <!-- CONTENT -->
       <div class="text-xs lg:text-sm">
-        <?= $postData['content'] ?>
+        <?= $modelData['content'] ?>
       </div>
 
     </div>

@@ -1,42 +1,11 @@
 <?php 
-  use App\Database\Enums\PostCategory;
-
   helper('form');
 
   $textFields = [
-    'title' => $postData['title'] ?? '',
-    'content' => $postData['content'] ?? '',
-    'image_url' => $postData['image_url'] ?? ''
+    'title' => $modelData['title'] ?? '',
+    'content' => $modelData['content'] ?? '',
+    'image_url' => $modelData['image_url'] ?? ''
   ];
-  
-  // Category options to dropdown
-  $categories = [];
-  foreach (array_column(PostCategory::cases(), 'value') as $value) {
-    switch ($value) {
-      case PostCategory::LINUX->value:
-        $categories[PostCategory::LINUX->value] = 'Linux';
-        break;
-      
-      case PostCategory::WINDOWS->value:
-        $categories[PostCategory::WINDOWS->value] = 'Windows';
-        break;
-    
-      case PostCategory::SOFTWARE->value:
-        $categories[PostCategory::SOFTWARE->value] = 'Software';
-        break;
-
-      case PostCategory::HARDWARE->value:
-        $categories[PostCategory::HARDWARE->value] = 'Hardware';
-        break;
-
-      case PostCategory::DEVELOPMENT->value:
-        $categories[PostCategory::DEVELOPMENT->value] = lang('Navbar.development');
-        break;
-
-      default:
-        break;
-    }
-  }
 ?>
 <?= $this->extend('layouts/base') ?>
 
@@ -44,7 +13,7 @@
   <div class="container_base text-center mb-9 mx-auto w-11/12 xl:w-2/3">
 
   <!-- POST FORM -->
-  <?= form_open($isEditing ? '{locale}/post/'.$postData['id'] : '{locale}/post', ['id' => 'create_edit_post', 'class' => 'flex flex-col mx-9 mt-7']) ?>
+  <?= form_open($isEditing ? '{locale}/post/'.$modelData['id'] : '{locale}/post', ['id' => 'create_edit_post', 'class' => 'flex flex-col mx-9 mt-7']) ?>
 
     <?php if ($isEditing) echo form_hidden('_method', 'PUT') ?>
 
@@ -76,13 +45,13 @@
     <?php endif; ?>
 
     <!-- CATEGORY DROPDOWN + SHOW ERROR -->
-    <?= form_dropdown('category', $categories, [], ['class' => 'form_input mt-7']) ?>
+    <?= form_dropdown('category', $categories, $modelData['category'] ?? [], ['class' => 'form_input mt-7']) ?>
     <?php if ( session('errors.category') ): ?>
       <span class="error_message mt-3"> <?= session('errors.category') ?> </span>
     <?php endif; ?>
 
     <!-- LANGUAGE DROPDOWN + SHOW ERROR -->
-    <?= form_dropdown('language', ['es' => 'ES', 'en' => 'EN'], [], ['class' => 'form_input mt-7']) ?>
+    <?= form_dropdown('language', ['es' => 'ES', 'en' => 'EN'], $globalData['locale'], ['class' => 'form_input mt-7']) ?>
     <?php if ( session('errors.language') ): ?>
       <span class="error_message mt-3"> <?= session('errors.language') ?> </span>
     <?php endif; ?>

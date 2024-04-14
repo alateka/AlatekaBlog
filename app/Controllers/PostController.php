@@ -16,7 +16,8 @@ class PostController extends BaseController
 
     return view('pages/posts/create_edit_post', [
       'globalData' => $this->globalData,
-      'isEditing'  => false
+      'isEditing'  => false,
+      'categories' => (new PostModel())->getPostCategories()
     ]);
   }
 
@@ -54,14 +55,13 @@ class PostController extends BaseController
     if ( !$this->request->is('get') )
       return $this->response->setStatusCode(405)->setBody(lang('Base.method_not_allowed'));
 
-    $post = new PostModel();
-    $user = new UserModel();
-    $postData = $post->find($id);
+    // Get model data from DB
+    $modelData = (new PostModel())->find($id);
 
     return view('pages/posts/show_post', [
       'globalData' => $this->globalData,
-      'postData'   => $postData,
-      'ownerData'  => $user->find($postData['user_id'])
+      'modelData'   => $modelData,
+      'ownerData'  => (new UserModel())->find($modelData['user_id'])
     ]);
   }
 
@@ -75,7 +75,8 @@ class PostController extends BaseController
 
     return view('pages/posts/create_edit_post', [
       'globalData' => $this->globalData,
-      'postData'   => $post->find($id),
+      'modelData'  => $post->find($id),
+      'categories' => $post->getPostCategories(),
       'isEditing'  => true
     ]);
   }
