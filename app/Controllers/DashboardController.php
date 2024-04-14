@@ -18,6 +18,6 @@ class DashboardController extends BaseController
         ]);
       }
     
-      return redirect('login');
+      return redirect('home');
     }
 }

@@ -20,7 +20,7 @@
               </a>
             </li>
 
-            <?php if ( str_contains(current_url(), 'home') ): ?>
+            <?php if ( str_contains(current_url(), 'home') || str_contains(current_url(), 'post') ): ?>
               <div onmouseleave="document.getElementById('category_menu').hidden = true">
 
                 <!-- CATEGORY MENU -->

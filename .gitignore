@@ -8,3 +8,4 @@ writable/session/ci_session*
 writable/debugbar/debugbar_*
 writable/logs/log-*
 app/Database/Database.db
+tailwindcss
