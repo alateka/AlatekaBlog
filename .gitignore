@@ -9,3 +9,5 @@ writable/debugbar/debugbar_*
 writable/logs/log-*
 app/Database/Database.db
 tailwindcss
+public/robots.txt
+public/sitemap.xml
